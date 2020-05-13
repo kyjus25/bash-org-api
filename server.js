@@ -38,9 +38,9 @@ app.get('/api/random', (req, res) => {
   });
 });
 
-app.get('/api/search', (req, res) => {
+app.get('/api/search/:string', (req, res) => {
   const options = {
-    url: `http://www.bash.org/?search=204`,
+    url: `http://www.bash.org/?search=${req['params']['string']}`,
     headers: {
       'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'
     }
